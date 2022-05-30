@@ -1,0 +1,55 @@
+<div>
+    <form [formGroup]="formData">
+        <h1>Calcular Credito</h1>
+        <div class="row">
+            <div class="form-group col">
+                <label>Tipo Pessoa: </label>
+                <select class="form-control" id="personType" name="personType" formControlName="personType">
+                    <option *ngFor="let person of personType" value="{{person.id}}">{{person.description}}</option>
+                </select>
+            </div>
+            <div class="form-group col">
+                <label>Valor do Credito: </label>
+                <input class="form-control" id="creditValue" name="creditValue" formControlName="creditValue" placeholder="R$ 50.000,00" />
+            </div>
+            <div class="form-group col">
+                <label>Tipo de Credito: </label>
+                <select class="form-control" id="typesOfCredits" name="typesOfCredits" formControlName="typesOfCredits">
+                    <option *ngFor="let typeOfCredit of typeOfCredits" value="{{typeOfCredit.id}}">{{typeOfCredit.description}}</option>
+                </select>
+            </div>
+            <div class="form-group col">
+                <label>Quantidade de Parcelas: </label>
+                <input class="form-control" id="quantityInstallments" name="quantityInstallments" formControlName="quantityInstallments" placeholder="Parcela minima 5x e Parcela maxima 72x" />
+            </div>
+            <div class="form-group col">
+                <label>Data Vencimento: </label>
+                <input class="form-control" id="dateFirstExpiration" name="dateFirstExpiration" formControlName="dateFirstExpiration" placeholder="01/02/2000" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col">
+                <button type="button" class="btn-primary" name="CalculateCredit" (click)="onSubmit()">Calcular</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col">
+                <label>Status Credito: </label>
+                <input class="form-control" id="status" name="status" formControlName="status" />
+            </div>
+            <div class="col">
+                <label>Valor total com juros: </label>
+                <input class="form-control" id="totalAmountWithInterest" name="totalAmountWithInterest" formControlName="totalAmountWithInterest" />
+            </div>
+            <div class="col">
+                <label>Valor dos juros: </label>
+                <input class="form-control" id="amountInterest" name="amountInterest" formControlName="amountInterest" />
+            </div>
+        </div>
+    </form>
+</div>
